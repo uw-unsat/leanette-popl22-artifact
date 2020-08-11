@@ -1,0 +1,44 @@
+{
+    "files": {
+        "training-set": "training-set.rkt",
+        "testing-set": "testing-set.rkt",
+        "work-list": "work-list.rkt",
+        "learning-results": "learned.rkt",
+        "analysis-results": "analysis.rkt",
+        "root-directory": "out.dummy"
+    },
+
+    "make-training-set": {
+        "num-workers": 6,
+        "row-lengths": [1,2,3],
+        "canonical-only?": true,
+        "fractional-subset": null
+    },
+
+    "make-test-set": {
+        "num-workers": 6,
+        "outfile": "test-set.rkt",
+        "row-lengths": [4],
+        "use-puzzles?": false
+    },
+
+    "batch": {
+        "num-workers": 3,
+        "batch-size": 5
+    },
+
+    "synthesize": {
+        "num-workers": 1,
+        "max-bindings": 1,
+        "fractional-subset": null,
+        "optimize-generalization?": false,
+        "counter-example-parameters": [2, 3, 4, 5, 6, 10],
+        "generalization-set-parameters": null,
+        "force-positive-parameters": [10]
+    },
+
+    "analyze": {
+        "num-workers": 6,
+        "builtins": "ignore"
+    }
+}

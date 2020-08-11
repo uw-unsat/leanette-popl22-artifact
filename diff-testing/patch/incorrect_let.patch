@@ -1,0 +1,13 @@
+diff --git a/lean/src/interp/sym/defs.lean b/lean/src/interp/sym/defs.lean
+index af051eb..2b93e25 100644
+--- a/lean/src/interp/sym/defs.lean
++++ b/lean/src/interp/sym/defs.lean
+@@ -69,7 +69,7 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+     match interpS fuel e_v ε σ with 
+     | none := none 
+     | some (halt σ') := some (halt σ')
+-    | some (ans σ' v_v) := interpS fuel e_b (ε.update_nth x v_v) σ'
++    | some (ans σ' v_v) := interpS fuel e_b ε σ'
+     end
+   | if0 a_c e_t e_e := 
+     match ε.nth a_c with 

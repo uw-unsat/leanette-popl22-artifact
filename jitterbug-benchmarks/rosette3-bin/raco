@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail;
+WORKSPACE=${WORKSPACE:-'/workspace'}/rosette-3;
+/usr/bin/raco cross -q --workspace "${WORKSPACE}" "$@";

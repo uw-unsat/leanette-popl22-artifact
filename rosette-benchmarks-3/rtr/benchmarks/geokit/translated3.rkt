@@ -1,0 +1,55 @@
+#lang rosette
+(require "../../verif_libraries/ivl.rkt")
+
+(require racket/include)(require racket/undefined)
+(define USE_BV false)
+(define BVSIZE 6)(include (file "../../verif_libraries/integer.rkt"))
+(include (file "../../verif_libraries/hash.rkt"))
+(include (file "../../verif_libraries/bool.rkt"))
+(include (file "../../verif_libraries/array.rkt"))
+(include (file "../../verif_libraries/float.rkt"))
+(include (file "../../verif_libraries/fixnum.rkt"))
+(include (file "../../verif_libraries/helper.rkt"))
+(include (file "../../verif_libraries/ids.rkt"))
+(include (file "../../verif_libraries/basicobject.rkt"))
+(include (file "../../verif_libraries/kernel.rkt"))
+
+
+;;; OBJECT STRUCT:
+(struct object ([classid][objectid] [size #:auto #:mutable] [contents #:auto #:mutable] [vec #:auto #:mutable] [id #:auto #:mutable] [value #:auto #:mutable] [@sw #:auto #:mutable] [@ne #:auto #:mutable] [@lng #:auto #:mutable] ) #:transparent #:auto-value (void))
+ 
+;;; ARGUMENT DEFINITIONS:
+  ; Initialize symbolic inputs to method 
+  ; Initialize struct self of type Geokit::GeoLoc
+(define self
+(let ([self (object 10 (new-obj-id))])
+self))
+
+;;; FUNCTION DEFINITIONS:
+(define (Geokit::GeoLoc_inst_province self  #:block [BLK (void)])
+	(let ()
+	(return (let ([self self])(begin(define tmpname0 (int (Geokit::GeoLoc_inst_state (object-objectid self) )))tmpname0)))))
+
+(define-symbolic Geokit::GeoLoc_inst_state (~> integer? integer?))
+;;;RETURN VALUE:
+(define b (Geokit::GeoLoc_inst_province self ))
+
+;;;VERIFIED ASSERTION:
+(verify #:assume (assert (and )) #:guarantee (assert (unless (stuck? b) (Integer_inst_== b (let ([self self])(begin(define tmpname1 (int (Geokit::GeoLoc_inst_state (object-objectid self) )))tmpname1)) ))))
+
+#|
+Class Name->Class ID
+Hash->0
+Class->1
+Array->2
+Fixnum->3
+Bignum->3
+Integer->3
+Float->4
+Boolean->5
+Geokit::Bounds->6
+Geokit::LatLng->7
+::Geokit::Bounds->8
+RDL::Verify->9
+Geokit::GeoLoc->10
+|#

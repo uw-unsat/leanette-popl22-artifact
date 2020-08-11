@@ -1,0 +1,13 @@
+diff --git a/lean/src/interp/sym/defs.lean b/lean/src/interp/sym/defs.lean
+index af051eb..5168a1a 100644
+--- a/lean/src/interp/sym/defs.lean
++++ b/lean/src/interp/sym/defs.lean
+@@ -35,7 +35,7 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+   | app o as := 
+     match list.mmap (λ a, ε.nth a) as with 
+     | none := none
+-    | some vs := some $ (f.strengthen σ (f.opS o vs))
++    | some vs := some $ (f.opS o vs)
+     end
+   | call a_f a_a := 
+     match ε.nth a_f with 

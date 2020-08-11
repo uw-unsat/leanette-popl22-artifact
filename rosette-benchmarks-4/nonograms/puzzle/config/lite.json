@@ -1,0 +1,49 @@
+{
+    "files": {
+        "training-set": "training-set.rkt",
+        "testing-set": "testing-set.rkt",
+        "work-list": "work-list.rkt",
+        "learning-results": "learned.rkt",
+        "compacted-results": "learned-rules.rkt",
+        "optimization-results": "optimized.rkt",
+        "optimization-results-pretty": "optimized-pretty.rkt",
+        "puzzles": "../data/test-set-extended.json",
+        "root-directory": "out.lite"
+    },
+
+    "make-training-set": {
+        "num-workers": 6,
+        "row-lengths": [1,2,3,4,5,6],
+        "canonical-only?": true,
+        "fractional-subset": 0.005
+    },
+
+    "make-test-set": {
+        "num-workers": 6,
+        "standard-test-set": "../data/out.fdg17submit/testing-set.rkt"
+    },
+
+    "batch": {
+        "num-workers": 7,
+        "outfile-prefix":"b",
+        "batch-size": 1
+    },
+
+    "synthesize": {
+        "num-workers": 7,
+        "max-bindings": 2,
+        "max-sketch-depth": 2,
+        "fractional-subset": null,
+        "timeout": 300,
+        "optimize-generalization?": true,
+        "counter-example-parameters": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        "generalization-set-parameters": [1, 2, 3, 4, 5],
+        "force-positive-parameters": [15],
+        "max-samples": 10000
+    },
+
+    "analyze": {
+        "num-workers": 7,
+        "builtins": "ignore"
+    }
+}

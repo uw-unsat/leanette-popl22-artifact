@@ -1,0 +1,14 @@
+*.aux
+*.glob
+*.vo
+*.vok
+*.vos
+*~
+.DS_Store
+\#*\#
+lean/src/workspace/*
+diff-testing/workspace/*.rktd
+diff-testing/workspace/*.rkt
+diff-testing/generation/*.rkt
+interface/workspace/*.csv
+perf/workspace/*.csv

@@ -1,0 +1,13 @@
+diff --git a/lean/src/sym_factory/defs.lean b/lean/src/sym_factory/defs.lean
+index 536b3ef..8d613bc 100644
+--- a/lean/src/sym_factory/defs.lean
++++ b/lean/src/sym_factory/defs.lean
+@@ -116,7 +116,7 @@ def opS.int {τ : type}
+ def opS.int_wrap : op.lang.op_int_2 → term type.int → term type.int → val_atom
+ | op.lang.op_int_2.add t_a t_b := opS.int (λ a b, lit.int $ a + b) (term.expr typedop.add) t_a t_b
+ | op.lang.op_int_2.mul t_a t_b := opS.int (λ a b, lit.int $ a * b) (term.expr typedop.mul) t_a t_b
+-| op.lang.op_int_2.lt t_a t_b := opS.int (λ a b, lit.bool $ a < b) (term.expr typedop.lt) t_a t_b
++| op.lang.op_int_2.lt t_a t_b := opS.int (λ a b, lit.bool $ a < b) (term.expr typedop.lt) t_b t_a
+ | op.lang.op_int_2.eq t_a t_b := opS.int (λ a b, lit.bool $ a = b) (term.expr typedop.eq) t_a t_b
+ 
+ 

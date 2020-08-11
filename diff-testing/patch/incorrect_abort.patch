@@ -1,0 +1,13 @@
+diff --git a/lean/src/interp/sym/defs.lean b/lean/src/interp/sym/defs.lean
+index af051eb..278c6b3 100644
+--- a/lean/src/interp/sym/defs.lean
++++ b/lean/src/interp/sym/defs.lean
+@@ -91,7 +91,7 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+           end          
+     end
+   | error := some (halt (f.assert σ f.mk_ff))
+-  | abort := some (halt (f.assume σ f.mk_ff))
++  | abort := some (halt (f.assert σ f.mk_ff))
+   end
+ 
+   end interp

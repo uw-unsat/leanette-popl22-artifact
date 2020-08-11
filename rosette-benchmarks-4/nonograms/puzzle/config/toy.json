@@ -1,0 +1,51 @@
+{
+    "files": {
+        "training-set": "training-set.rkt",
+        "testing-set": "testing-set.rkt",
+        "work-list": "work-list.rkt",
+        "learning-results": "learned.rkt",
+        "compacted-results": "learned-rules.rkt",
+        "optimization-results": "optimized.rkt",
+        "optimization-results-pretty": "optimized-pretty.rkt",
+        "puzzles": "../data/test-set-extended.json",
+        "root-directory": "out.toy"
+    },
+
+    "make-training-set": {
+        "num-workers": 1,
+        "row-lengths": [1],
+        "canonical-only?": true,
+        "fractional-subset": null
+    },
+
+    "make-test-set": {
+        "num-workers": 1,
+        "num-rollouts": 1,
+        "use-puzzles?": true
+    },
+
+    "batch": {
+        "num-workers": 1,
+        "outfile-prefix":"b",
+        "batch-size": 1
+    },
+
+    "synthesize": {
+        "num-workers": 1,
+        "max-bindings": 1,
+        "max-sketch-depth": 2,
+        "fractional-subset": null,
+        "timeout": 180,
+        "optimize-generalization?": true,
+        "counter-example-parameters": [1, 2, 3, 4, 5],
+        "generalization-set-parameters": [1, 2],
+        "force-positive-parameters": [5],
+        "feature-set": null,
+        "max-samples": 100
+    },
+
+    "analyze": {
+        "num-workers": 1,
+        "builtins": "ignore"
+    }
+}

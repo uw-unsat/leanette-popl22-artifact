@@ -1,0 +1,1 @@
+(lst ((str line-transition ((str line ((lst ((lit 1))) (lst ((lit e))))) (lst ((lit #t))))) (str line-transition ((str line ((lst ()) (lst ((lit e))))) (lst ((lit #f)))))))

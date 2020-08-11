@@ -1,0 +1,40 @@
+{
+    "general": {
+        "root-directory": "out.template"
+    },
+
+    "enumerate": {
+        "num-workers": 6,
+        "outfile": "transitions.rkt",
+        "row-lengths": [1,2],
+        "canonical-only?": true,
+        "fractional-subset": null
+    },
+
+    "make-test-set": {
+        "num-workers": 6,
+        "outfile": "test-set.rkt",
+        "row-lengths": [4],
+        "use-puzzles?": false
+    },
+
+    "synthesize": {
+        "num-workers": 6,
+        "transitions": "transitions.rkt",
+        "outfile": "rules.rkt",
+        "max-bindings": 3,
+        "optimize-generalization?": false,
+        "counter-example-parameters": [2, 3, 4, 5, 6, 10],
+        "generalization-set-parameters": [1, 2, 3],
+        "force-positive-parameters": [10],
+        "max-samples": 10000
+    },
+
+    "analyze": {
+        "num-workers": 6,
+        "test-set": "test-set.rkt",
+        "rules": "rules.rkt",
+        "outfile": "results.json",
+        "builtins": "ignore"
+    }
+}

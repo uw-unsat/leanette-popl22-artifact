@@ -1,0 +1,7 @@
+jitterbug-rosette3:
+    jitterbug = 689475e4dc91855346c26d3947dc7c79c7b1fdc1
+    serval    = 845b8de614047c32536167e78e5f958a7c80932e
+
+jitterbug-rosette4:
+    jitterbug = ebb92d4243c36a65d39004881cd8b544eed8f043
+    serval    = 70b95ac37f79856fcef21e688df871e3c79f6bff

@@ -1,0 +1,13 @@
+diff --git a/lean/src/interp/sym/defs.lean b/lean/src/interp/sym/defs.lean
+index af051eb..c48168b 100644
+--- a/lean/src/interp/sym/defs.lean
++++ b/lean/src/interp/sym/defs.lean
+@@ -86,7 +86,7 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+           | some rt := 
+             match interpS fuel e_e ε (f.assume σ (f.not truth)) with 
+             | none := none 
+-            | some rf := f.merge_ρ σ [⟨f.truth v, rt⟩, ⟨f.not truth, rf⟩]
++            | some rf := f.merge_ρ σ [⟨f.not truth, rt⟩, ⟨truth, rf⟩]
+             end
+           end          
+     end

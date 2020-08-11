@@ -1,0 +1,16 @@
+diff --git a/lean/src/interp/sym/defs.lean b/lean/src/interp/sym/defs.lean
+index af051eb..0bdde6c 100644
+--- a/lean/src/interp/sym/defs.lean
++++ b/lean/src/interp/sym/defs.lean
+@@ -76,9 +76,9 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+     | none := none 
+     | some v := 
+       let truth := f.truth v in 
+-        if f.is_tt truth then 
++        if f.is_ff truth then 
+           interpS fuel e_t ε σ
+-        else if f.is_ff truth then 
++        else if f.is_tt truth then 
+           interpS fuel e_e ε σ
+         else 
+           match interpS fuel e_t ε (f.assume σ truth) with 

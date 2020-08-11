@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ../lean
+lean --make src/workspace/load.lean

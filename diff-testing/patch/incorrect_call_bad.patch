@@ -1,0 +1,20 @@
+diff --git a/lean/src/interp/sym/defs.lean b/lean/src/interp/sym/defs.lean
+index af051eb..7a40780 100644
+--- a/lean/src/interp/sym/defs.lean
++++ b/lean/src/interp/sym/defs.lean
+@@ -48,7 +48,7 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+             disjunction := f.some choice.guard casted,
+             σ'          := f.assert σ disjunction in
+           if f.is_ff disjunction || f.halted σ' then 
+-            some $ halt σ'
++            some $ halt σ
+           else
+             let agg : option (choices SymB (sym.result SymB SymV)) := 
+               casted.mmap 
+@@ -96,4 +96,4 @@ def interpS : ℕ → lang.exp D O → env SymV → sym.state SymB → option (s
+ 
+   end interp
+ 
+-  end interp 
+\ No newline at end of file
++  end interp

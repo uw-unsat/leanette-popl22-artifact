@@ -1,0 +1,13 @@
+diff --git a/lean/src/sym_factory/defs.lean b/lean/src/sym_factory/defs.lean
+index 536b3ef..0f71376 100644
+--- a/lean/src/sym_factory/defs.lean
++++ b/lean/src/sym_factory/defs.lean
+@@ -42,7 +42,7 @@ def pe_or : term type.bool → term type.bool → term type.bool
+ | t_a (term.lit (lit.bool ff)) := t_a
+ | t_a t_b := 
+   if t_a = t_b then 
+-    t_a 
++    mk_tt
+   else 
+     term.ite t_a mk_tt t_b
+ 
